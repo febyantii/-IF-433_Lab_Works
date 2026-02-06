@@ -7,12 +7,7 @@ fun main(args: Array<String>) {
     var area = pi * radius * radius
 
     println("Radius: $radius, Area: $area")
+    println("Checksize: ${checkSize(area)}")
 }
 
-fun checkSize(area: Double) {
-    if (area > 100) {
-        println("This is a big circle")
-    } else {
-        println("This is a small circle")
-    }
-}
+fun checkSize(area: Double) = if (area > 100) "This is a big circle" else "This is a small circle"
