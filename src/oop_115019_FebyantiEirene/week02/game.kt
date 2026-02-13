@@ -51,7 +51,7 @@ fun main(){
                 println("Sisa HP Hero: ${hero1.hp}")
             }
         } else if (pilihan == 2) {
-            println("Hero Kabur Bye!")
+            println("Hero Kabur Bye-Bye!")
             break;
         }
     }
