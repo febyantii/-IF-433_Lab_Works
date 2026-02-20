@@ -19,4 +19,13 @@ fun main() {
     weapon1.damage = -50
     weapon1.damage = 9999
     println("Tier Weapon: ${weapon1.tier}")
+
+    val player1 = Player("Jinwoo")
+
+    // ERROR: player1.xp = 100
+
+    player1.addXp(50)
+
+    player1.addXp(60)
+
 }
