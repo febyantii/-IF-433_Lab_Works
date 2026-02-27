@@ -5,5 +5,4 @@ open class Developer (name: String, baseSalary: Int, val programmingLanguage: St
         println("$name sedang ngoding menggunakan $programmingLanguage.")
     }
 
-    calculateBonus()
 }
