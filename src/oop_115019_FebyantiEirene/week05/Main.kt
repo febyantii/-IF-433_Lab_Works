@@ -41,5 +41,16 @@ fun main() {
 
     for (PaymentMethod in daftarKartu) {
         PaymentMethod.processPayment(75000.0)
+
+        when (PaymentMethod) {
+            is EWallet -> {
+                println("=> Terdeteksi Pembayaran dengan EWallet")
+                PaymentMethod.topUp(50000.0)
+            }
+            is CreditCard -> {
+                println("=> Terdeteksi Pembayaran dengan Credit Card")
+                PaymentMethod.processPayment(75000.0)
+            }
+        }
     }
 }
