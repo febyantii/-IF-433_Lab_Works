@@ -46,9 +46,6 @@ fun main() {
             is EWallet -> {
                 println("=> Terdeteksi Pembayaran dengan EWallet")
                 PaymentMethod.topUp(50000.0)
-            }
-            is CreditCard -> {
-                println("=> Terdeteksi Pembayaran dengan Credit Card")
                 PaymentMethod.processPayment(75000.0)
             }
         }
