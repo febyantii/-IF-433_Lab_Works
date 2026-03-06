@@ -1,6 +1,6 @@
 package oop_115019_FebyantiEirene.week05
 
-class MathHelper(val sisi:Int, val panjang: Int, val lebar: Int, val jariJari: Double) {
+class MathHelper {
     fun hitungLuas(sisi:Int):Int {
         return sisi * sisi
     }
