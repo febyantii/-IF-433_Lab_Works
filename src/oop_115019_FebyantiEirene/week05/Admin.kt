@@ -5,7 +5,7 @@ class Admin(nama: String) : Pegawai(nama) {
         println("[$nama] sedang duduk di depan komputer melayani administrasi.")
     }
 
-    fun doADminWork() {
+    fun doAdminWork() {
         println("[$nama] sedang merekap data absensi mahasiswa.")
     }
 }
