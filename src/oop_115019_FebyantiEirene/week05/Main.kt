@@ -31,4 +31,15 @@ fun main() {
 
     val hitungLingkaran = MathHelper()
     println("Luas Lingkaran adalah: ${hitungLingkaran.hitungLuas(5.5)}")
+
+    println("-----------------------")
+
+    val OVO = EWallet("Savings", 50000.0)
+    val CC = CreditCard("Savings", 100000.0)
+
+    val daftarKartu: List<PaymentMethod> = listOf(OVO, CC)
+
+    for (PaymentMethod in daftarKartu) {
+        PaymentMethod.processPayment(75000.0)
+    }
 }
