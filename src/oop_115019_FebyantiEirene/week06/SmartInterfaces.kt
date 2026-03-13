@@ -1,8 +1,8 @@
 package oop_115019_FebyantiEirene.week06
 
 interface SmartDevice {
-    var id: String
-    var name: String
+    val id: String
+    val name: String
 }
 
 interface Switchable {
