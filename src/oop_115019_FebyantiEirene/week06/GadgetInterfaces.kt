@@ -1,6 +1,6 @@
 package oop_115019_FebyantiEirene.week06
 
-interface GadgetInterfaces {
+interface Camera {
     fun turnOn() {
         println("Lensa kamera terbuka dan sensor aktif.")
     }
