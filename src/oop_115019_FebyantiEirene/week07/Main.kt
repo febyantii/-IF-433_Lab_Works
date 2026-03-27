@@ -41,4 +41,14 @@ fun main() {
     println("\n=== TEST ASSIGNMENT ===")
     GameManager.startGame()
     GameManager.startGame()
+
+    val legendaryChance = ItemRarity.LEGENDARY.dropChance
+    println("Peluang mendapatkan item LEGENDARY: $legendaryChance%")
+
+    val starterSword = Weapon.forgeStarterSword()
+    println("Senjata Awal Pemain Telah Ditempa!")
+    println("Nama Senjata : ${starterSword.item.name}")
+    println("Damage       : ${starterSword.item.damage}")
+    println("Rarity       : ${starterSword.item.rarity}") // Sesuaikan 'rarity' atau 'itemRarity'
+    println("Durability   : ${starterSword.durability}")
 }
