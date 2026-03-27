@@ -51,4 +51,19 @@ fun main() {
     println("Damage       : ${starterSword.item.damage}")
     println("Rarity       : ${starterSword.item.rarity}") // Sesuaikan 'rarity' atau 'itemRarity'
     println("Durability   : ${starterSword.durability}")
+
+    val starterWeapon = Weapon.forgeStarterSword()
+    val upgradedItem = starterWeapon.item.copy(
+        name = "Pedang Kayu Legendaris (Upgraded)",
+        damage = 25
+    )
+
+    println("=== SIMULASI UPGRADE & EVENT ===")
+    println("Senjata di-upgrade! Damage baru: ${upgradedItem.damage}")
+
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.LootDropped(upgradedItem))
+    processEvent(BattleState.GameOver("Terkena Jebakan Racun"))
+
 }

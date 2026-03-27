@@ -17,5 +17,10 @@ fun processEvent(event: BattleState) {
             // Karena SafeZone adalah 'object', tidak perlu menggunakan 'is'
             println("Kamu berada di Area Aman. Waktunya beristirahat.")
         }
+
+        is BattleState.GameOver -> {
+            println("=== GAME OVER ===")
+            println("Pesan: ${event.message}")
+        }
     }
 }
