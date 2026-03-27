@@ -37,4 +37,8 @@ fun main() {
     }
 
     println(uiMessage)
+
+    println("\n=== TEST ASSIGNMENT ===")
+    GameManager.startGame()
+    GameManager.startGame()
 }
