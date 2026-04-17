@@ -1,7 +1,7 @@
 package oop_115019_FebyantiEirene.week08
 
 object DatabaseMock {
-    fun findUser(id: int): UserProfile? {
+    fun findUser(id: Int): UserProfile? {
         return if (id == 1) UserProfile("TestUser", "test@test.com") else null
     }
 }
