@@ -6,6 +6,7 @@ class Hero (val name: String, var baseDamage: Int, var hp: Int = 100){
     fun attack (targetName: String) {
         println("$name menebas $targetName! ")
     }
+
     fun takeDamage(damage: Int) {
         hp -= damage
 
