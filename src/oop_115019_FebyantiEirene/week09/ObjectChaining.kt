@@ -11,7 +11,7 @@ fun main() {
     )
 
     println("\n=== HONOR STUDENTS PIPELINE ===")
-    val honorNames = stduents
+    val honorNames = students
         .filter { it.gpa >= 3.5 }
         .sortedBy { it.name }
         .map { it.name.uppercase() }
