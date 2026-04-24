@@ -12,6 +12,8 @@ fun main() {
         TradeLog("BTCUSDT", "SHORT", 25, -45.5, "CLOSED")  // Loss, CLOSED
     )
 
-    // Opsional: Print untuk memastikan data masuk
     println("Berhasil memuat ${tradeHistory.size} data trading.")
+
+    val closedTrades = tradeHistory.filter { it.status == "CLOSED" }
+
 }
