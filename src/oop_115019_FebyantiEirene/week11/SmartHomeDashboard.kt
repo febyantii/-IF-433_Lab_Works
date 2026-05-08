@@ -34,4 +34,12 @@ fun main() {
     searchResult?.let {
         println("Hasil Pencarian: ${it.diagnose()}")
     }
+
+    println("\n=== SMART HOME DASHBOARD SUMMARY ===")
+    with(homeDevices) {
+        println("Total Perangkat: ${this.size}")
+        this.forEach { device ->
+            println(device.diagnose())
+        }
+    }
 }
