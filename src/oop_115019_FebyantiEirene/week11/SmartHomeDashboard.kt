@@ -49,4 +49,10 @@ fun main() {
     }
 
     println("Total penggunaan daya: $totalPower Watt")
+
+    println("\n=== FINAL DEVICE DIAGNOSTIC ===")
+    // Iterasi forEach untuk menjalankan extension function .diagnose()
+    homeDevices.forEach { device ->
+        println(device.diagnose())
+    }
 }
