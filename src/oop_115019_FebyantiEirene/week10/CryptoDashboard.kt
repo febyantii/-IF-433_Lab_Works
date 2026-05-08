@@ -5,7 +5,7 @@ fun main() {
     val coinRepo = WalletRepository<Coin>()
 
     // Checkpoint 16: Mengisi data dompet (minimal 3 koin)
-    coinRepo.add(Coin("BTC", 0.5))
+    coinRepo.add(Coin("BTC.", 0.5))
     coinRepo.add(Coin("ETH", 10.2))
     coinRepo.add(Coin("USDT", 500.0))
 }
