@@ -19,4 +19,15 @@ fun main() {
     response.data.forEach { coin ->
         println("Koin: ${coin.name} | Saldo: ${coin.balance}")
     }
+
+    // Tambahkan di bawah kode iterasi koin sebelumnya
+    println("\n=== LOG TRANSAKSI TERBARU ===")
+
+    // Inisialisasi repository khusus untuk transaksi
+    val txRepo = WalletRepository<Transaction>()
+
+    // Menambahkan data transaksi fiktif
+    txRepo.add(Transaction("TX-001", 0.05))
+    txRepo.add(Transaction("TX-002", 1.2))
+    txRepo.add(Transaction("TX-003", 250.0))
 }
