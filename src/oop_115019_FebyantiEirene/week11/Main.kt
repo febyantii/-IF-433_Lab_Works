@@ -1,7 +1,5 @@
 package oop_115019_FebyantiEirene.week11
 
-package oop_001_johnthor.week11
-
 fun main() {
     println("=== TEST EXTENSION FUNCTIONS ===")
 
