@@ -11,4 +11,12 @@ fun main() {
 
     // Membungkus list koin ke dalam ApiResponse
     val response = ApiResponse("200 OK", coinRepo.getAll())
+
+    println("Status Respons: ${response.status}")
+    println("--- Daftar Koin di Dompet ---")
+
+    // Menggunakan forEach untuk menampilkan detail setiap koin
+    response.data.forEach { coin ->
+        println("Koin: ${coin.name} | Saldo: ${coin.balance}")
+    }
 }
