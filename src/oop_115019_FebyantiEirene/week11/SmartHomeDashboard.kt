@@ -27,4 +27,11 @@ fun main() {
 
     // Menambah alat pakan peliharaan
     homeDevices.add(SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10))
+
+    val searchResult = homeDevices.find { it.category == "Camera" }
+
+    // Eksekusi diagnosis hanya jika searchResult tidak null
+    searchResult?.let {
+        println("Hasil Pencarian: ${it.diagnose()}")
+    }
 }
