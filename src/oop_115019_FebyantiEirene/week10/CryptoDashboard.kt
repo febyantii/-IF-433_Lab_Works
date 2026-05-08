@@ -30,4 +30,10 @@ fun main() {
     txRepo.add(Transaction("TX-001", 0.05))
     txRepo.add(Transaction("TX-002", 1.2))
     txRepo.add(Transaction("TX-003", 250.0))
+
+    txRepo.getAll().forEach { tx ->
+        println("ID Transaksi: ${tx.id} | Jumlah: ${tx.amount}")
+    }
+
+    println("\n--- Arsitektur Generik Berhasil Diuji ---")
 }
