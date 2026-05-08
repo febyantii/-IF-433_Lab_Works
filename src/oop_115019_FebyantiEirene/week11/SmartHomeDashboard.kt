@@ -42,4 +42,11 @@ fun main() {
             println(device.diagnose())
         }
     }
+
+    // Menghitung total daya menggunakan run dan sumOf
+    val totalPower = homeDevices.run {
+        sumOf { it.powerLoad }
+    }
+
+    println("Total penggunaan daya: $totalPower Watt")
 }
