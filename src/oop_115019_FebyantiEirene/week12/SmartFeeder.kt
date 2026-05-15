@@ -7,3 +7,15 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
     // Logika pengecekan stok dan mekanik akan ditambahkan di langkah berikutnya
     return availableGram - requestedGram
 }
+
+fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): Int {
+    require(requestedGram > 0) { "Porsi kibble harus lebih dari 0 gr" }
+
+    // Validasi Dispenser
+    if (isJammed) {
+        throw DispenserJamException()
+    }
+
+    // Lanjut ke logika berikutnya...
+    return availableGram
+}
