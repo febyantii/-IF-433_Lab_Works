@@ -1,13 +1,15 @@
 package oop_001_johnthor.week12
 
 fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): Int {
+    // 1. Validasi awal menggunakan require
     require(requestedGram > 0) { "Porsi kibble harus lebih dari 0 gr" }
 
+    // 2. Cek Hardware (Dispenser)
     if (isJammed) {
         throw DispenserJamException()
     }
 
-    // Validasi Stok Makanan
+    // 3. Validasi Stok Makanan
     if (requestedGram > availableGram) {
         throw FoodEmptyException(requestedGram, availableGram)
     }
@@ -17,46 +19,37 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
 }
 
 fun main() {
-    var currentKibbleStock = 50.0 // Menggunakan Double agar konsisten dengan tipe data berat
-    // Atau sesuai instruksi gambar (Int):
-    // var currentKibbleStock = 50
+    // Inisialisasi stok awal
+    var currentKibbleStock = 50
 
+    // --- JADWAL MAKAN 1: Eksekusi dengan Multiple Catch ---
     println("--- JADWAL MAKAN PAGI ---")
     try {
-        currentKibbleStock = dispenseKibble(80, currentKibbleStock.toInt(), false)
+        // Simulasi: Minta 80gr padahal stok cuma 50gr -> Memicu FoodEmptyException
+        currentKibbleStock = dispenseKibble(requestedGram = 80, availableGram = currentKibbleStock, isJammed = false)
     } catch (e: DispenserJamException) {
-        println("Peringatan: ${e.message}")
+        println("Peringatan ke Pemilik: ${e.message}")
     } catch (e: FoodEmptyException) {
-        println("Peringatan: ${e.message}")
-    } catch (e: Exception) {
-        println("Error Umum: ${e.message}")
-    }
-
-    try {
-        currentKibbleStock = dispenseKibble(80, currentKibbleStock.toInt(), false)
-    } catch (e: DispenserJamException) {
-        println("Peringatan: ${e.message}")
-    } catch (e: FoodEmptyException) {
-        println("Peringatan: ${e.message}")
+        println("Peringatan ke Pemilik: ${e.message}")
     } catch (e: Exception) {
         println("Error Umum: ${e.message}")
     } finally {
+        // Tetap dijalankan baik sukses maupun error
         println("Siklus pengecekan dispenser pagi selesai.")
     }
 
+    // --- JADWAL MAKAN 2: Eksekusi dengan runCatching ---
     println("\n--- JADWAL MAKAN SORE ---")
+    // Pemilik baru saja mengisi ulang alat sehingga availableGram menjadi 1000
     val result = runCatching {
         dispenseKibble(requestedGram = 30, availableGram = 1000, isJammed = false)
     }
 
     result.onSuccess { newStock ->
-        currentKibbleStock = newStock.toDouble()
+        currentKibbleStock = newStock
         println("Makan sore sukses! Sisa stok kibble: $currentKibbleStock gr")
-    }
-
-    result.onFailure { error ->
+    }.onFailure { error ->
         println("Peringatan ke Pemilik: ${error.message}")
         println("(Opsional: Berikan chicken jerky secara manual)")
     }
 }
-
