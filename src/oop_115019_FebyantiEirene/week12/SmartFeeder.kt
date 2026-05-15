@@ -20,5 +20,16 @@ fun main() {
     var currentKibbleStock = 50.0 // Menggunakan Double agar konsisten dengan tipe data berat
     // Atau sesuai instruksi gambar (Int):
     // var currentKibbleStock = 50
+
+    println("--- JADWAL MAKAN PAGI ---")
+    try {
+        currentKibbleStock = dispenseKibble(80, currentKibbleStock.toInt(), false)
+    } catch (e: DispenserJamException) {
+        println("Peringatan: ${e.message}")
+    } catch (e: FoodEmptyException) {
+        println("Peringatan: ${e.message}")
+    } catch (e: Exception) {
+        println("Error Umum: ${e.message}")
+    }
 }
 
