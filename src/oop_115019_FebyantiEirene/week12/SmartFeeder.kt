@@ -16,3 +16,9 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
     return availableGram - requestedGram
 }
 
+fun main() {
+    var currentKibbleStock = 50.0 // Menggunakan Double agar konsisten dengan tipe data berat
+    // Atau sesuai instruksi gambar (Int):
+    // var currentKibbleStock = 50
+}
+
