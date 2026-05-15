@@ -31,5 +31,17 @@ fun main() {
     } catch (e: Exception) {
         println("Error Umum: ${e.message}")
     }
+
+    try {
+        currentKibbleStock = dispenseKibble(80, currentKibbleStock.toInt(), false)
+    } catch (e: DispenserJamException) {
+        println("Peringatan: ${e.message}")
+    } catch (e: FoodEmptyException) {
+        println("Peringatan: ${e.message}")
+    } catch (e: Exception) {
+        println("Error Umum: ${e.message}")
+    } finally {
+        println("Siklus pengecekan dispenser pagi selesai.")
+    }
 }
 
